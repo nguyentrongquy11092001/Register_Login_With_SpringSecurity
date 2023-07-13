@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Add Book</title>
+</head>
+<body>
+	<section>
+		<form method="post" role="form" th:action="@{/books/saveBook}" th:object="${book}">
+        <div>
+            <div><label>Book name:</label>
+                <input  placeholder="Book name" th:field="${book.bookTitle}"/>
+            </div>
+            <div><label>Author:</label>
+                <input  placeholder="Author" th:field="${book.author}"/>
+            </div>
+            <div><label>Publisher:</label>
+                <input  placeholder="Publisher" th:field="${book.publisher}"/>
+            </div>
+            <div><label>ISBN:</label>
+                <input  placeholder="ISBN" th:field="${book.ISBN}"/>
+            </div>
+            <div><label>Number of pages:</label>
+                <input  placeholder="Number of pages" th:field="${book.number_of_pages}"/>
+            </div>
+            <div><label>Quantity:</label>
+                <input  placeholder="Quantity" th:field="${book.quantity}"/>
+            </div>
+            <div><label>Price:</label>
+                <input  placeholder="Price" th:field="${book.price}"/>
+            </div>
+            
+            <div>
+                <input type="submit" value="Submit"/> <input type="reset" value="Clear"/>
+            </div>
+            <input th:field="${book.bookId}" type="hidden"/>
+        </div>
+    </form>
+	</section>
+</body>
+</html>

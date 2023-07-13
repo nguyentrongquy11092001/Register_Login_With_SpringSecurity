@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<a th:href="@{/books/showAddForm}">Add new book</a>
+	<div>
+		<table border="1">
+			<thead>
+				<th>Book ID</th>
+				<th>Book name</th>
+				<th>Author</th>
+				<th>Publisher</th>
+				<th>ISBN</th>
+				<th>Number of pages</th>
+				<th>Quantity</th>
+				<th>Price</th>
+				<th>Action</th>
+			</thead>
+			<tbody>
+				<tr th:each="book:${books}">
+					<td th:text="${book.bookId}" />
+					<td th:text="${book.bookTitle}" />
+					<td th:text="${book.author}" />
+					<td th:text="${book.publisher}" />
+					<td th:text="${book.ISBN}" />
+					<td th:text="${book.number_of_pages}" />
+					<td th:text="${book.quantity}" />
+					<td th:text="${book.price}" />
+					<td><a th:href="@{/books/deleteBook(id=${book.bookId})}">Delete</a>
+						<a th:href="@{/books/showUpdateForm(id=${book.bookId})}">Update</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

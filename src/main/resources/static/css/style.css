@@ -1,0 +1,90 @@
+*{
+    list-style: none;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper .sidebar{
+	background: #ddd;
+	position: fixed !important;
+    top: 56px;
+    z-index: 1;
+	left: 0;
+	width: 170px;
+	height: 100%;
+	padding: 20px 0;
+	transition: all 0.5s ease;
+}
+.wrapper .sidebar .profile{
+	margin-bottom: 5px;
+	text-align: center;
+}
+.wrapper .sidebar .profile img{
+	display: block;
+	width: 80px;
+	height: 80px;
+    border-radius: 50%;
+	border: 5px solid rgb(83, 83, 83);
+	margin: 0 auto;
+}
+.wrapper .sidebar .profile h3{
+    font-size: 15px;
+	margin: 5px 0 5px;
+}
+.wrapper .sidebar .profile p{
+	font-size: 12px;
+}
+
+.wrapper .section{
+	width: calc(100% – 170px);
+	margin-left: 170px;
+    top: 50px;
+    position: relative;
+	transition: all 0.5s ease;
+}
+
+.wrapper .section .top_navbar{
+    width: 45px;
+	background: rgba(11, 210, 0, 0.493);
+	height: 50px;
+	display: flex;
+    position: fixed;
+    z-index: 1;
+	align-items: center;
+	padding: 0 10px;
+}
+.wrapper .section .top_navbar .hamburger a{
+	font-size: 25px;
+	color: #ffffff;
+}
+.wrapper .section .top_navbar .hamburger a:hover{
+	color: #000000;
+}
+body.active .wrapper .sidebar{
+	left: -170px;
+}
+body.active .wrapper .section{
+	margin-left: 0px;
+	width: 100%;
+}
+.tablink{
+    height: 50px;
+    width: 170px;
+    font-size: 16px;
+    padding:8px 16px;
+    border: none;
+    text-align: left;
+    border-bottom: 1px solid rgb(63, 63, 63);
+    background-color:#ddd;
+    cursor: pointer;
+}
+
+.tablink:hover{
+    background-color: white;
+}
+

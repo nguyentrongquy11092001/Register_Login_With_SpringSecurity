@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login Page</title>
+</head>
+<body>
+	<section>
+		<div class="container p-5">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card">
+						<div class="card-header text-center fs-4">Đăng nhập tài
+							khoản</div>
+						<div th:if="${session.msg}" class="alert alert-success">
+							<p class="text-center">[[${session.msg}]]</p>
+						</div>
+						<div class="card-body">
+							<form action="/login" method="post">
+								<div class="mb-3">
+									<label for="email" class="form-label">Email</label> <input
+										type="email" class="form-control" id="email" name="username" value="ntquy11092001@gmail.com">
+								</div>
+								<div class="mb-3">
+									<label for="password" class="form-label">Mật khẩu</label> 
+									<input type="password" class="form-control" id="pwd" name="password" value="Q11u09y2k1@">
+								</div>
+								<div class="d-grid gap-2 col-6 mx-auto">
+									<button type="submit" class="btn btn-success me-md-2">Đăng
+										nhập</button>
+								</div>
+								<div th:if="${param.error}" class="alert alert-danger mt-3">Email
+									hoặc mật khẩu không đúng!</div>
+								<div th:if="${param.logout}" class="alert alert-success mt-3">Đã
+									đăng xuất thành công!</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
